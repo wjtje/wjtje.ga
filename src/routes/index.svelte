@@ -2,10 +2,10 @@
 	import Logo from "../components/Logo.svelte";
 	import { onMount } from "svelte";
 
-	let visible = false;
+	let showLogo = false;
 
 	onMount(() => {
-		visible = true;
+		showLogo = true;
 	});
 </script>
 
@@ -14,7 +14,7 @@
 </svelte:head>
 
 <main>
-	{#if visible}
+	{#if showLogo}
 		<Logo />
 	{/if}
 </main>

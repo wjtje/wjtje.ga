@@ -4,6 +4,11 @@
 
 	import type { TransitionConfig, FadeParams } from "svelte/transition";
 
+	// The timing of the logo
+	export let drawTime = 1000;
+	export let fadeDrawTime = 400;
+	export let fadeColorTime = 600;
+
 	/**
 	 * This is like the fade animation, but is will hide the element
 	 */
@@ -16,7 +21,6 @@
 			duration,
 			easing,
 			css: (t) => {
-				console.log(t);
 				return `opacity: ${Math.abs(1 - t)}`;
 			},
 		};
@@ -30,35 +34,43 @@
 	id="main-logo"
 >
 	<g
-		transition:fadeInverse={{ delay: 800, easing: cubicInOut }}
+		transition:fadeInverse={{
+			delay: drawTime,
+			easing: cubicInOut,
+			duration: fadeDrawTime,
+		}}
 		style="opacity: 0"
 		id="main-logo-outline"
 	>
 		<path
-			transition:draw
+			transition:draw={{ duration: drawTime }}
 			d="M21.9169 70.6989L0.91693 20.6989C-2.58308 5.19882 16.9169 -0.801177 23.4169 12.1989L33.4169 36.1989L43.4169 12.1989C47.9169 3.19885 59.9169 2.19884 65.4169 12.1989L75.417 36.1989L85.4169 12.1989C92.4169 -1.30115 111.417 5.69885 107.917 20.6989L86.9169 70.6989C82.4169 81.6989 68.4169 82.1989 63.9169 70.6989L54.4169 48.1989L44.9169 70.6989C41.4169 81.6989 25.9169 82.1989 21.9169 70.6989Z"
 		/>
 		<path
-			transition:draw
+			transition:draw={{ duration: drawTime }}
 			d="M143.917 29.4652H156.917L156.917 50.6989C156.917 54.6989 151.099 55.9953 146.917 52.6989C137.917 44.1989 125.917 51.6989 126.417 61.6989C126.917 71.6989 141.417 79.1989 152.417 79.1989C163.417 79.1989 178.917 70.1989 180.917 52.6989V16.6989C180.417 10.6989 175.417 5.69885 168.917 5.69885H142.417C128.417 7.19885 127.917 28.6989 143.917 29.4652Z"
 		/>
 		<path
-			transition:draw
+			transition:draw={{ duration: drawTime }}
 			d="M213.917 29H233.417V67.6989C233.417 81 257.417 82.5 257.417 67.3544L257.417 32C257.417 32 257.5 31 258.5 30C259.5 29 261 29 261 29H276.917C292.917 29 292.917 5.69887 277.917 5.69887H213.917C199.417 5.69887 196.917 28 213.917 29Z"
 			stroke-linejoin="round"
 		/>
 		<path
-			transition:draw
+			transition:draw={{ duration: drawTime }}
 			d="M325.432 29.4652H338.432L338.432 50.6989C338.432 54.6989 332.615 55.9953 328.432 52.6989C319.432 44.1989 307.432 51.6989 307.932 61.6989C308.432 71.6989 322.932 79.1989 333.932 79.1989C344.932 79.1989 360.432 70.1989 362.432 52.6989V16.6989C361.932 10.6989 356.932 5.69885 350.432 5.69885H323.932C309.932 7.19885 309.432 28.6989 325.432 29.4652Z"
 		/>
 		<path
-			transition:draw
+			transition:draw={{ duration: drawTime }}
 			d="M442.917 5.69885H399.917C393.417 5.69885 387.917 11.1989 387.917 16.6989V67.6989C387.917 73.6989 393 79 399 79H442C458 79 458 55 442 55H412V54H435C450 53 449 30 435 30H412V29H443C457 29 456.917 5.69885 442.917 5.69885Z"
 			stroke-linejoin="round"
 		/>
 	</g>
 	<g
-		transition:fade={{ delay: 800, easing: cubicInOut, duration: 800 }}
+		transition:fade={{
+			delay: drawTime,
+			easing: cubicInOut,
+			duration: fadeColorTime,
+		}}
 		id="main-logo-color"
 	>
 		<path d="M442 67L400 67" stroke="url(#paint_w_1)" />
