@@ -11,6 +11,10 @@
 
 <svelte:head>
 	<title>wjtje.ga</title>
+	<meta
+		name="description"
+		content="wjtje - An 18 year old developer that is experimenting with Typescript, React, Flutter and Svelte."
+	/>
 </svelte:head>
 
 <main>
@@ -21,7 +25,7 @@
 
 <style>
 	main {
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 		display: flex;
 		align-items: center;
