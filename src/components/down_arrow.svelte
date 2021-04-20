@@ -19,7 +19,6 @@
 >
 	<path
 		d="M5.5 6L40 40L74.5 6"
-		stroke="white"
 		stroke-width="11"
 		stroke-linecap="round"
 		stroke-linejoin="round"
@@ -33,5 +32,13 @@
 		display: block;
 		top: 92vh;
 		cursor: pointer;
+		stroke: black;
+	}
+
+	/* Add support for dark mode */
+	@media (prefers-color-scheme: dark) {
+		svg {
+			stroke: white;
+		}
 	}
 </style>
