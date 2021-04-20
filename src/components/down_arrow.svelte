@@ -3,7 +3,7 @@
 
 	function handleClick() {
 		// Scroll to the main content
-		window.scrollTo({
+		document.getElementsByTagName("main")[0]?.scrollTo({
 			behavior: "smooth",
 			top: window.innerHeight,
 		});
@@ -27,10 +27,8 @@
 
 <style>
 	svg {
-		width: 2rem;
-		position: absolute;
+		height: 1.25rem;
 		display: block;
-		top: 92vh;
 		cursor: pointer;
 		stroke: black;
 	}
