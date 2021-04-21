@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import AboutScreen from "../components/about_screen.svelte";
 	import IntroScreen from "../components/intro_screen.svelte";
 	import ProjectsScreen from "../components/projects_screen.svelte";
@@ -24,6 +24,6 @@
 		width: 100%;
 		height: 100vh;
 		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
+		scroll-snap-type: y proximity;
 	}
 </style>
